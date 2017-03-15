@@ -90,6 +90,9 @@ public class MeteorScorer {
 	 * @param config
 	 */
 	private void loadConfiguration(MeteorConfiguration config) {
+		System.out.println("config: ");
+		System.out.println(config);
+		System.out.println(config.getParaDirURL());
 		language = config.getLanguage();
 		langID = config.getLangID();
 		setNormalize(config.getNormalization());

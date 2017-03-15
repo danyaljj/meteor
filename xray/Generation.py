@@ -3,7 +3,7 @@ import re, shutil, subprocess, sys, tempfile
 from MeteorAlignment import *
 
 # Edit as needed
-xelatex_cmd = '/usr/bin/xelatex'
+xelatex_cmd = '/Library/TeX/texbin/xelatex'
 
 # Edit as needed
 gnuplot_cmd = '/usr/bin/gnuplot'

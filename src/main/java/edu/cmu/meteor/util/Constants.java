@@ -359,7 +359,7 @@ public class Constants {
 
 	public static URL getDefaultParaFileURL(int langID) throws RuntimeException {
 		String shortLang = getLanguageShortName(langID);
-		String fileName = "/data/paraphrase-" + shortLang + ".gz";
+		String fileName = "/classes/data/paraphrase-" + shortLang + ".gz";
 		try {
 			return new File(getLocation() + fileName).toURI().toURL();
 		} catch (MalformedURLException ex) {
@@ -369,8 +369,12 @@ public class Constants {
 
 	public static URL getDefaultWordFileURL(int langID) throws RuntimeException {
 		String lang = getLanguageName(langID);
+		System.out.println("DEFAULT_WORD_DIR_URL.toString(): ");
+		System.out.println(DEFAULT_WORD_DIR_URL.toString());
 		try {
-			return new URL(DEFAULT_WORD_DIR_URL.toString() + "/" + lang
+			return new URL(DEFAULT_WORD_DIR_URL.toString()
+					+ "/"
+					+ lang
 					+ ".words");
 		} catch (MalformedURLException ex) {
 			throw new RuntimeException();

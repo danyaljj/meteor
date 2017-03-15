@@ -21,6 +21,7 @@ import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.Properties;
+import java.util.Arrays;
 
 import edu.cmu.meteor.scorer.MeteorConfiguration;
 import edu.cmu.meteor.scorer.MeteorScorer;
@@ -31,6 +32,8 @@ import edu.cmu.meteor.util.SGMData;
 public class Meteor {
 
 	public static void main(String[] args) {
+
+		System.out.println(Arrays.toString(args));
 
 		// Usage
 		if (args.length < 2) {
@@ -44,6 +47,8 @@ public class Meteor {
 
 		// Use command line options to create props, configuration
 		Properties props = createPropertiesFromArgs(args, 2);
+		System.out.println("Props: ");
+		System.out.println(props);
 		MeteorConfiguration config = new MeteorConfiguration(props);
 
 		// Print settings
@@ -82,7 +87,7 @@ public class Meteor {
 			System.err
 					.println("Warning: Stdio incompatible with other modes - using Stdio only");
 		}
-
+		System.out.println("config: " + config.getParaDirURL());
 		MeteorScorer scorer = new MeteorScorer(config);
 
 		if (stdio) {
